@@ -1,0 +1,47 @@
+# Ignore target (compiled classes & build artifacts)
+target/
+*.jar
+*.war
+*.ear
+
+# Ignore Maven's build files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Ignore Eclipse IDE files
+.classpath
+.project
+.settings/
+
+# Ignore IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Ignore NetBeans files
+nbproject/private/
+build/
+nbbuild/
+dist/
+.nb-gradle/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore logs and temp files
+logs/
+*.log
+hs_err_pid*
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Git-specific files
+.git/
