@@ -29,3 +29,7 @@ Every array type implements the interfaces Cloneable and java.io.Serializable.
 Underscores in numeric literals are just for readability
 
 [Quiz](https://www.geeksforgeeks.org/quizzes/data-types-2-gq/)
+
+![ControlFlowJava](images/ControlFlow.png)
+
+![DifferentTypesOfLoops](images/DifferentTypesOfLoops.png)
