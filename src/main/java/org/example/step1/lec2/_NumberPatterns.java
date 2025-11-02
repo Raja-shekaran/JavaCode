@@ -2,7 +2,7 @@ package org.example.step1.lec2;
 
 import java.util.Scanner;
 
-public class NumberPatterns {
+public class _NumberPatterns {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -56,6 +56,32 @@ public class NumberPatterns {
                 System.out.print(c);
             }
             c++;
+            System.out.println();
+        }
+
+        //Alpha-Triangle Pattern
+        for(int i=0;i<n;i++){
+            for(char ch = (char) ('A'+n-1-i); ch<=(char) ('A'+n-1); ch++){
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+
+        //Number Crown Pattern
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<i+1;j++)
+            {
+                System.out.print(j+1);
+            }
+            for(int j=0;j<2*(n-1-i);j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=i;j>=0;j--)
+            {
+                System.out.print(j+1);
+            }
             System.out.println();
         }
 
