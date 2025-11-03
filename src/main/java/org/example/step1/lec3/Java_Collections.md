@@ -13,14 +13,8 @@ Collections in Java solve this by providing **dynamic**, **type-safe**, and **re
 ## 🏗️ Framework Overview
 
 ### 📚 Hierarchy
-```
-Iterable
- └── Collection
-      ├── List
-      ├── Set
-      └── Queue
-Map (separate branch - key-value pairs)
-```
+
+![Hierarchy](images/img.png)
 
 ---
 
