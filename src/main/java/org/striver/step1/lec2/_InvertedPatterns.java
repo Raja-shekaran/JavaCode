@@ -1,4 +1,4 @@
-package org.example.step1.lec2;
+package org.striver.step1.lec2;
 
 import java.util.Scanner;
 

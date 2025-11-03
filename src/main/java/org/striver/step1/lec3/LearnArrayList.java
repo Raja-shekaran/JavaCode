@@ -1,4 +1,4 @@
-package org.example.step1.lec3;
+package org.striver.step1.lec3;
 
 import java.util.*;
 
