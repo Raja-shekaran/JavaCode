@@ -8,5 +8,15 @@ public class PrintDivisors {
                 System.out.println(i);
             }
         }
+
+        //i*i <= n or i <= Math.sqrt(n)
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+            if((n%i)==0){
+                System.out.println(i);
+                if((n/i)!=i) {
+                    System.out.println(n / i);
+                }
+            }
+        }
     }
 }
