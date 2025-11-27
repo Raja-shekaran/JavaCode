@@ -1,30 +1,25 @@
 package practise;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 public class Practise {
     public static void main(String[] args) {
-        int[] arr = new int[]{3, 1, 4, 1, 5, 9, 3, 3};
-        Map<Integer, Integer> hashMap = new LinkedHashMap<>();
+        int[] arr = new int[]{5,2,4,6,1};
+        insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 
-        for (int num : arr) {
-            hashMap.put(num, hashMap.getOrDefault(num, 0) + 1);
-        }
-
-        boolean found = false;
-
-        for (Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {
-            if (entry.getValue() == 2) {
-                System.out.println(entry.getKey());
-                found = true;
-                break;
+    public static void insertionSort(int[] arr){
+        for(int i=1;i<arr.length;i++)
+        {
+            int key = arr[i];
+            int j = i - 1;
+            while(j>=0 && arr[j]>key)
+            {
+                arr[j+1]=arr[j];
+                j--;
             }
+            arr[j+1]=key;
         }
-
-        if (!found) {
-            System.out.println(-1);
-        }
-
     }
 }
