@@ -1,68 +1,37 @@
 package practise;
 
-import java.util.Arrays;
-
 public class Practise {
     public static void main(String[] args) {
-        int[] arr = { 64, 25, 12, 22, 11 };
-
-        System.out.print("Original array: ");
-        printArray(arr);
-
-        mergeSort(arr,0,arr.length-1);
-
-        System.out.print("Sorted array: ");
-        printArray(arr);
-    }
-
-    public static void mergeSort(int[] arr, int low, int high) {
-        if (low == high) return;
-
-        int mid = ( low + high) / 2;
-
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid + 1, high);
-
-        merge(arr, low, mid, high);
-    }
-
-    public static void merge(int[] arr, int low, int mid, int high)
-    {
-        int left = low;
-        int right = mid+1;
-        int index=0;
-        int[] temp = new int[high - low + 1];
-        // Merge until one side is exhausted
-        while (left <= mid && right <= high) {
-            if (arr[left] <= arr[right]) {
-                temp[index++] = arr[left++];
-            } else {
-                temp[index++] = arr[right++];
+        int n = 4;
+        for(int i=0;i<n;i++)
+        {
+            //Spaces
+            for(int j=0;j<n-i-1;j++){
+                System.out.print(" ");
             }
+            //Stars
+            for(int j=0;j<2*i+1;j++){
+                if(j==0 || j==2*i)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
         }
-
-        // Leftover left half
-        while (left <= mid) {
-            temp[index++] = arr[left++];
+        for(int i=n-1;i>=0;i--)
+        {
+            //Spaces
+            for(int j=0;j<n-i-1;j++){
+                System.out.print(" ");
+            }
+            //Stars
+            for(int j=0;j<2*i+1;j++){
+                if(j==0 || j==2*i)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
         }
-
-        // Leftover right half
-        while (right <= high) {
-            temp[index++] = arr[right++];
-        }
-
-        // Copy back to original array
-        for (int i = 0; i < temp.length; i++) {
-            arr[low + i] = temp[i];
-        }
-
     }
-
-    public static void printArray(int[] arr){
-        for (int val : arr) {
-            System.out.print(val + " ");
-        }
-        System.out.println();
-    }
-
 }
