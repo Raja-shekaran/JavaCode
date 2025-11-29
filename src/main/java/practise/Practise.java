@@ -1,37 +1,28 @@
 package practise;
 
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+
 public class Practise {
     public static void main(String[] args) {
-        int n = 4;
-        for(int i=0;i<n;i++)
+        int[] arr = new int[]{3, 5, 2, 5, 3, 2};
+        System.out.println(firstRepeating(arr));
+    }
+
+    public static int firstRepeating(int[] arr){
+        int ans = -1;
+        Set<Integer> set = new HashSet<>();
+        for(int i=arr.length-1;i>=0;i--)
         {
-            //Spaces
-            for(int j=0;j<n-i-1;j++){
-                System.out.print(" ");
+            if(set.contains(arr[i])){
+                ans = arr[i];
             }
-            //Stars
-            for(int j=0;j<2*i+1;j++){
-                if(j==0 || j==2*i)
-                    System.out.print("*");
-                else
-                    System.out.print(" ");
+            else{
+                set.add(arr[i]);
             }
-            System.out.println();
         }
-        for(int i=n-1;i>=0;i--)
-        {
-            //Spaces
-            for(int j=0;j<n-i-1;j++){
-                System.out.print(" ");
-            }
-            //Stars
-            for(int j=0;j<2*i+1;j++){
-                if(j==0 || j==2*i)
-                    System.out.print("*");
-                else
-                    System.out.print(" ");
-            }
-            System.out.println();
-        }
+        return ans;
     }
 }
