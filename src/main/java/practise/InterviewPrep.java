@@ -183,20 +183,20 @@ class Square extends Shape{
 
 //Immutable class are the classes whose object cannot be changed after initialisation
 //use final and private and don't add any setters
-final class Test{
-    private final String subject;
-    private final int marks;
-
-    Test(String subject, int marks) {
-        this.subject = subject;
-        this.marks = marks;
-    }
-
-    public String getSubject(){
-        return this.subject;
-    }
-
-    public int getMarks(){
-        return this.marks;
-    }
-}
+//final class Test{
+//    private final String subject;
+//    private final int marks;
+//
+//    Test(String subject, int marks) {
+//        this.subject = subject;
+//        this.marks = marks;
+//    }
+//
+//    public String getSubject(){
+//        return this.subject;
+//    }
+//
+//    public int getMarks(){
+//        return this.marks;
+//    }
+//}
