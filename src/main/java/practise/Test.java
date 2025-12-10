@@ -1,49 +1,23 @@
 package practise;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test {
     public static void main(String[] args) {
-        int[] arr1 = {1, 2, 2, 3};
-        int[] arr2 = {2, 3, 4};
-        List<Integer> list = new ArrayList<>();
-        int i=0;
-        int j=0;
-        while(i < arr1.length && j < arr2.length){
-            if(arr1[i] < arr2[j]){
-                if(list.isEmpty() || list.get(list.size() - 1) != arr1[i]){
-                    list.add(arr1[i]);
+        int[] nums = {10, 5, 2, 7, 1, -10};
+        int k = 15;
+        System.out.println(findLongestSubArraySum(nums,k));
+
+    }
+    public static int findLongestSubArraySum(int[] nums, int k){
+        int length = 0;
+        for(int i=0;i<nums.length;i++){
+            int sum = 0;
+            for(int j=i;j<nums.length;j++){
+                sum += nums[j];
+                if(sum==k){
+                    length=Math.max(length,j-i+1);
                 }
-                i++;
-            }
-            else if(arr2[j] < arr1[i]){
-                if(list.isEmpty() || list.get(list.size() - 1) != arr2[j]){
-                    list.add(arr2[j]);
-                }
-                j++;
-            }
-            else{
-                if(list.isEmpty() || list.get(list.size() - 1) != arr1[i]){
-                    list.add(arr1[i]);
-                }
-                i++;
-                j++;
             }
         }
-        while(i<arr1.length){
-            if(list.isEmpty() || list.get(list.size() - 1) != arr1[i]){
-                list.add(arr1[i]);
-            }
-            i++;
-        }
-        while(j<arr2.length){
-            if(list.isEmpty() || list.get(list.size() - 1) != arr2[j]){
-                list.add(arr2[j]);
-            }
-            j++;
-        }
-        System.out.println(list.size());
-        System.out.println(list);
+       return length;
     }
 }
