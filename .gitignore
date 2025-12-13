@@ -45,3 +45,5 @@ Thumbs.db
 
 # Ignore Git-specific files
 .git/
+
+src/main/java/practise
