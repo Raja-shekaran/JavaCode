@@ -15,20 +15,61 @@ public class SinglyLinkedList {
         Node head = convertArrayToLinkedList(arr);
         //Traversal
         printLinkedList(head);
+        System.out.println();
         //Length
         System.out.println(lengthOfLinkedList(head));
+        System.out.println();
         //Search
         System.out.println(checkIfPresent(head,9));
+        System.out.println();
         //Remove Head
         Node removedHead = removeHead(head);
         printLinkedList(removedHead);
+        System.out.println();
         //Remove Tail
         Node removedTailHead = removeTail(head);
         printLinkedList(removedTailHead);
+        System.out.println();
+        //Remove Kth Position
+        Node removedKthHead = removeKthElement(head, 3);
+        printLinkedList(removedKthHead);
+        System.out.println();
+        //Remove Node with value
+        Node removeElementWithValue = removeNodeWithValue(head, 4);
+        printLinkedList(removeElementWithValue);
+    }
+
+    public static Node removeNodeWithValue(Node head, int val){
+        if(head == null) return head;
+        Node temp = head, prev = null;
+        while (temp!=null){
+            if(temp.data==val){
+                prev.next = prev.next.next;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    public static Node removeKthElement(Node head, int k){
+        if(head == null) return head;
+        if(k==1) return removeHead(head);
+        Node temp = head, prev = null;
+        int count = 0;
+        while (temp!=null){
+            count++;
+            if(count==k){
+                prev.next = prev.next.next;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
     }
 
     public static Node removeTail(Node head){
-        if(head == null || head.next == null) return null;
+        if(head == null || head.next == null) return head;
         Node temp = head;
         while (temp.next.next != null){
             temp = temp.next;
@@ -38,7 +79,7 @@ public class SinglyLinkedList {
     }
 
     public static Node removeHead(Node head){
-        if(head == null) return null;
+        if(head == null) return head;
         head = head.next;
         return head;
     }
